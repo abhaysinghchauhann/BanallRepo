@@ -63,10 +63,9 @@ async def start_command(event):
 
     await event.respond(
         f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [**{bot_first_name}**](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
-        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n • ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
+        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
         buttons=[
-            [Button.url("Channel", url="https://t.me/AllPremiumBIN")],
-            [Button.url("Group", url="https://t.me/alonegroup121")],
+            [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
         ],
         file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg'
     )
