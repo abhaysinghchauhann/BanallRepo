@@ -62,7 +62,7 @@ async def start_command(event):
     bot_id = bot_info.id
 
     await event.respond(
-        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [**{bot_first_name}**](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
+        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [{bot_first_name}](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
         "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
         buttons=[
             [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
@@ -71,83 +71,6 @@ async def start_command(event):
     )
 
 
-
-
-                        
-
-
-
-
-@Dil.on(events.NewMessage(pattern="^/kickall"))
-async def kickall(event):
-    if event.sender_id in SUDO_USERS:
-        if not event.is_group:
-            Reply = f"Noob !! Use This Cmd in Group."
-            await event.reply(Reply)
-        else:
-            await event.delete()
-            Annu = await event.get_chat()
-            dilop = await event.client.get_me()
-            admin = Annu.admin_rights
-            creator = Annu.creator
-            if not admin and not creator:
-                return await event.reply("I Don't have sufficient Rights !!")
-            Sagar = await Dil.send_message(event.chat_id, "**Hello !! I'm Alive**")
-            admins = await event.client.get_participants(event.chat_id, filter=ChannelParticipantsAdmins)
-            admins_id = [i.id for i in admins]
-            all = 0
-            kimk = 0
-            async for user in event.client.iter_participants(event.chat_id):
-                all += 1
-                try:
-                    if user.id not in admins_id:
-                        await event.client.kick_participant(event.chat_id, user.id)
-                        kimk += 1
-                        await asyncio.sleep(0.1)
-                except Exception as e:
-                    print(str(e))
-                    await asyncio.sleep(0.1)
-            await Sagar.edit(f"**Users Kicked Successfully ! \n\n Kicked:** `{kimk}` \n **Total:** `{all}`")
-
-
-@Dil.on(events.NewMessage(pattern="^/banall"))
-async def banall(event):
-    if event.sender_id in SUDO_USERS:
-        if not event.is_group:
-            Reply = f"Noob !! Use This Cmd in Group."
-            await event.reply(Reply)
-        else:
-            await event.delete()
-            Annu = await event.get_chat()
-            dilop = await event.client.get_me()
-            admin = Annu.admin_rights
-            creator = Annu.creator
-            if not admin and not creator:
-                return await event.reply("I Don't have sufficient Rights !!")
-            Sagar = await Dil.send_message(event.chat_id, "**Hello !! I'm Alive**")
-            admins = await event.client.get_participants(event.chat_id, filter=ChannelParticipantsAdmins)
-            admins_id = [i.id for i in admins]
-            all = 0
-            bann = 0
-            async for user in event.client.iter_participants(event.chat_id):
-                all += 1
-                try:
-                    if user.id not in admins_id:
-                        await event.client(EditBannedRequest(event.chat_id, user.id, RIGHTS))
-                        bann += 1
-                        await asyncio.sleep(0.1)
-                except Exception as e:
-                    print(str(e))
-                    await asyncio.sleep(0.1)
-            await Sagar.edit(f"**Users Banned Successfully ! \n\n Banned Users:** `{bann}` \n **Total Users:** `{all}`")
-
-
-@Dil.on(events.NewMessage(pattern="^/unbanall"))
-async def unban(event):
-    if event.sender_id in SUDO_USERS:
-        if not event.is_group:
-            Reply = f"Noob !! Use This Cmd in Group."
-            await event.reply(Reply)
 @Dil.on(events.NewMessage(pattern="^/ping"))
 async def ping(e):
     start = datetime.now()
@@ -165,10 +88,10 @@ async def kickall(event):
         await event.reply(Reply)
     else:
         await event.delete()
-        Annu = await event.get_chat()
-        dilop = await event.client.get_me()
-        admin = Annu.admin_rights
-        creator = Annu.creator
+        Ven = await event.get_chat()
+        Venomop = await event.client.get_me()
+        admin = Ven.admin_rights
+        creator = Ven.creator
         if not admin and not creator:
             return await event.reply("I Don't have sufficient Rights !!")
         Sagar = await Dil.send_message(event.chat_id, "**Hello !! I'm Alive**")
@@ -196,10 +119,10 @@ async def banall(event):
         await event.reply(Reply)
     else:
         await event.delete()
-        Annu = await event.get_chat()
-        dilop = await event.client.get_me()
-        admin = Annu.admin_rights
-        creator = Annu.creator
+        Ven = await event.get_chat()
+        Venomop = await event.client.get_me()
+        admin = Ven.admin_rights
+        creator = Ven.creator
         if not admin and not creator:
             return await event.reply("I Don't have sufficient Rights !!")
         Sagar = await Dil.send_message(event.chat_id, "**Hello !! I'm Alive**")
