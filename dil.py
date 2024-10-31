@@ -58,17 +58,19 @@ for x in Var.SUDO:
 @Dil.on(events.NewMessage(pattern='/start'))
 async def start_command(event):
     bot_info = await event.client.get_me()
-    bot_name = bot_info.first_name
+    bot_first_name = bot_info.first_name
+    bot_id = bot_info.id
 
     await event.respond(
-        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ Ban {bot_name} ʙᴏᴛ!\n"
-        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs : •ʙᴀɴᴀʟʟ \n•ᴜɴʙᴀɴᴀʟʟ \n•ʟᴇᴀᴠᴇ \n•ʀᴇsᴛᴀʀᴛ \n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
+        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [**{bot_first_name}**](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
+        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n • ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
         buttons=[
-            [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN")],
-            [Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
+            [Button.url("Channel", url="https://t.me/AllPremiumBIN")],
+            [Button.url("Group", url="https://t.me/alonegroup121")],
         ],
         file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg'
     )
+
 
 
 
