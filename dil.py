@@ -56,6 +56,7 @@ for x in Var.SUDO:
 
 
 
+'''
 start_time = time.time()
 
 def get_uptime():
@@ -64,6 +65,7 @@ def get_uptime():
     uptime_hours, uptime_minutes = divmod(uptime_minutes, 60)
     uptime_days, uptime_hours = divmod(uptime_hours, 24)
     return f"{uptime_days}d {uptime_hours}h {uptime_minutes}m {uptime_seconds}s"
+'''
 
 
 @Dil.on(events.NewMessage(pattern='/start'))
@@ -72,11 +74,11 @@ async def start_command(event):
     bot_first_name = bot_info.first_name
     bot_id = bot_info.id
 
-    uptime = get_uptime()
+  #  uptime = get_uptime()
 
     await event.respond(
         f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [{bot_first_name}](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
-        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ \n\n ᴜᴘᴛɪᴍᴇ: {uptime}\n",
+        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ \nn",
         buttons=[
             [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
         ],
