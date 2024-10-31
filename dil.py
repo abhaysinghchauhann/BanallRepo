@@ -3,6 +3,8 @@ import re
 import os
 import sys
 import asyncio
+import time
+from datetime import timedelta
 from telethon import TelegramClient, events
 import telethon.utils
 from telethon.tl import functions
@@ -13,6 +15,8 @@ from telethon.tl.functions.channels import EditBannedRequest
 from datetime import datetime
 from config import Var
 from telethon import Button
+
+start_time = time.time()
 
 from time import sleep
 from telethon.errors.rpcerrorlist import FloodWaitError
@@ -61,9 +65,12 @@ async def start_command(event):
     bot_first_name = bot_info.first_name
     bot_id = bot_info.id
 
+    uptime_seconds = int(time.time() - start_time)
+    uptime = str(timedelta(seconds=uptime_seconds))
+
     await event.respond(
         f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [{bot_first_name}](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
-        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
+        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ \n\n ᴜᴘᴛɪᴍᴇ: {uptime}\n",
         buttons=[
             [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
         ],
