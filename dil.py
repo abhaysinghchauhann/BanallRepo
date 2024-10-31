@@ -71,11 +71,10 @@ def get_uptime():
 @Dil.on(events.NewMessage(pattern='/start'))
 async def start_command(event):
     bot_info = await event.client.get_me()
-    bot_first_name = bot_info.first_name
-    bot_id = bot_info.id
+    bot_name = bot_info.first_name
 
     await event.respond(
-        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [**{bot_first_name}](tg://user?id={bot_id}**) ʙᴏᴛ!\n\n"
+        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [**{bot_name}](tg://user?id={bot_id}**) ʙᴏᴛ!\n\n"
         "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• ʙᴀɴᴀʟʟ \n• ᴜɴʙᴀɴᴀʟʟ \n• ʟᴇᴀᴠᴇ \n• ʀᴇsᴛᴀʀᴛ \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ \n",
         buttons=[
             [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
