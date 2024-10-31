@@ -57,16 +57,19 @@ for x in Var.SUDO:
 
 @Dil.on(events.NewMessage(pattern='/start'))
 async def start_command(event):
-    # Send a picture and start message
+    bot_info = await event.client.get_me()
+    bot_name = bot_info.first_name
+
     await event.respond(
-        "Welcome to the Ban All Bot!\n"
-        "banall: Mass bans selected users, useful for handling spammers or raids.\n unbanall: Reverses mass bans, reallowing access to previously banned users \n Admin-only commands; use cautiously",
+        f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ Ban {bot_name} ʙᴏᴛ!\n"
+        "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs : •ʙᴀɴᴀʟʟ \n•ᴜɴʙᴀɴᴀʟʟ \n•ʟᴇᴀᴠᴇ \n•ʀᴇsᴛᴀʀᴛ \n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ",
         buttons=[
-            [Button.url("Channel", url="https://t.me/AllPremiumBIN")],
-            [Button.url("Group", url="https://t.me/alonegroup121")],
+            [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN")],
+            [Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
         ],
-        file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg',  # Replace with your image URL
+        file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg'
     )
+
 
 
                         
