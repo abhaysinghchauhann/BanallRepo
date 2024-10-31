@@ -1,0 +1,25 @@
+{
+   "name": "Ban All Bot",
+   "description": "Telegram Bot",
+   "repository": "https://github.com/stkeditz/BanallRepo",
+   "logo": "https://telegra.ph/file/abc96d1ec9d101df8f988.jpg",
+   "image": "heroku/python",
+   "env": {
+      "BOT_TOKEN": {
+        "description": "Bot Token",
+        "value": "",
+        "required": true
+      },      
+      "SUDO": {
+            "description": "Sudo users id space by space",
+            "value": "",
+            "required": true  
+      }
+   },
+   "formation": {
+            "worker": {
+                "quantity": 1,
+                "size": "basic"
+            }
+        }
+  }
