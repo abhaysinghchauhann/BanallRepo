@@ -15,15 +15,6 @@ from datetime import datetime
 from config import Var
 from telethon import Button
 
-start_time = time.time()
-
-def get_uptime():
-    uptime_seconds = round(time.time() - start_time)
-    uptime_minutes, uptime_seconds = divmod(uptime_seconds, 60)
-    uptime_hours, uptime_minutes = divmod(uptime_minutes, 60)
-    uptime_days, uptime_hours = divmod(uptime_hours, 24)
-    return f"{uptime_days}d {uptime_hours}h {uptime_minutes}m {uptime_seconds}s"
-
 from time import sleep
 from telethon.errors.rpcerrorlist import FloodWaitError
 from telethon.tl import functions
@@ -63,6 +54,16 @@ SUDO_USERS = []
 for x in Var.SUDO:
     SUDO_USERS.append(x)
 
+
+
+start_time = time.time()
+
+def get_uptime():
+    uptime_seconds = round(time.time() - start_time)
+    uptime_minutes, uptime_seconds = divmod(uptime_seconds, 60)
+    uptime_hours, uptime_minutes = divmod(uptime_minutes, 60)
+    uptime_days, uptime_hours = divmod(uptime_hours, 24)
+    return f"{uptime_days}d {uptime_hours}h {uptime_minutes}m {uptime_seconds}s"
 
 
 @Dil.on(events.NewMessage(pattern='/start'))
