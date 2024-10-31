@@ -4,7 +4,6 @@ import os
 import sys
 import asyncio
 import time
-from datetime import timedelta
 from telethon import TelegramClient, events
 import telethon.utils
 from telethon.tl import functions
@@ -17,6 +16,13 @@ from config import Var
 from telethon import Button
 
 start_time = time.time()
+
+def get_uptime():
+    uptime_seconds = round(time.time() - start_time)
+    uptime_minutes, uptime_seconds = divmod(uptime_seconds, 60)
+    uptime_hours, uptime_minutes = divmod(uptime_minutes, 60)
+    uptime_days, uptime_hours = divmod(uptime_hours, 24)
+    return f"{uptime_days}d {uptime_hours}h {uptime_minutes}m {uptime_seconds}s"
 
 from time import sleep
 from telethon.errors.rpcerrorlist import FloodWaitError
@@ -65,8 +71,7 @@ async def start_command(event):
     bot_first_name = bot_info.first_name
     bot_id = bot_info.id
 
-    uptime_seconds = int(time.time() - start_time)
-    uptime = str(timedelta(seconds=uptime_seconds))
+    uptime = get_uptime()
 
     await event.respond(
         f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ [{bot_first_name}](tg://user?id={bot_id}) ʙᴏᴛ!\n\n"
