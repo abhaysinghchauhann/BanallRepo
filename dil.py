@@ -69,9 +69,6 @@ def get_uptime():
 '''
 
 
-import random
-from telethon import events, Button
-
 EMOJIS = ["🥰", "❤️", "😁", "💋", "😱", "🤣", "😘", "❤️‍🔥", "👌", "🫡", "😍"]
 
 @Dil.on(events.NewMessage(pattern='/start'))
@@ -91,7 +88,7 @@ async def start_command(event):
         file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg'
     )
     
-    await event.message.react(random_emoji)
+    await event.client.send_reaction(event.chat_id, event.message.id, [random_emoji])
 
 
 
