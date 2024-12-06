@@ -4,6 +4,7 @@ import os
 import sys
 import asyncio
 import time
+import random
 from telethon import TelegramClient, events
 import telethon.utils
 from telethon.tl import functions
@@ -68,19 +69,30 @@ def get_uptime():
 '''
 
 
+import random
+from telethon import events, Button
+
+EMOJIS = ["🥰", "❤️", "😁", "💋", "😱", "🤣", "😘", "❤️‍🔥", "👌", "🫡", "😍"]
+
 @Dil.on(events.NewMessage(pattern='/start'))
 async def start_command(event):
     bot_info = await event.client.get_me()
     bot_name = bot_info.first_name
 
+    random_emoji = random.choice(EMOJIS)
+
     await event.respond(
         f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ **{bot_name}** ʙᴏᴛ!\n\n"
         "ᴋᴇʏ ғᴇᴀᴛᴜʀᴇs :\n• /banall \n• /unbanall \n• /leave \n• /restart \n\n ᴀᴅᴍɪɴ-ᴏɴʟʏ ᴄᴏᴍᴍᴀɴᴅs; ᴜsᴇ ᴄᴀᴜᴛɪᴏᴜsʟʏ \n",
         buttons=[
-            [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
+            [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/AllPremiumBIN"),
+             Button.url("ɢʀᴏᴜᴘ", url="https://t.me/alonegroup121")],
         ],
         file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg'
     )
+    
+    await event.message.react(random_emoji)
+
 
 
 @Dil.on(events.NewMessage(pattern="^/ping"))
