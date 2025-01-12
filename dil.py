@@ -85,7 +85,7 @@ async def start_command(event):
             [Button.url("ᴄʜᴀɴɴᴇʟ", url="https://t.me/isthat_defence"),
              Button.url("ɢʀᴏᴜᴘ", url="https://t.me/hereis_admino")],
         ],
-        file='https://telegra.ph/file/abc96d1ec9d101df8f988.jpg'
+        file='https://te.legra.ph/file/d90dc3cee80004227d458.jpg'
     )
     
     await event.client.send_reaction(event.chat_id, event.message.id, [random_emoji])
